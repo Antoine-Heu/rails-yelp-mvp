@@ -1,0 +1,13 @@
+<%= link_to "Home",
+restaurants_path(@restaurant) %>
+<h2>Create a new restaurant</h2>
+<%= simple_form_for @restaurant do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <%= f.label :address %>
+  <%= f.text_field :address %>
+  <%= f.input :category, collection: Restaurant::CATEGORIES %>
+  <%= f.label :phone_number %>
+  <%= f.text_field :phone_number %>
+  <%= f.submit %>
+<% end %>
